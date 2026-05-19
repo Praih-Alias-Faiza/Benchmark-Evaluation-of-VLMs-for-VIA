@@ -1,7 +1,7 @@
 """
 Batch Inference for CogVLM (4-bit, Multi-GPU)
 Runs captioning/VQA on ALL images in a given folder.
-Saves results automatically to results.json
+Saves results automatically to home / supermarkets results.json
 """
 
 import os
@@ -128,7 +128,8 @@ for idx, img_name in enumerate(image_files):
 
 # saving results to csv
 df = pd.DataFrame(results)
-save_path = "data/cogvlm_results_supermarket.json"
+# save_path = "data/cogvlm_results_supermarket.json"
+save_path = "data/cogvlm_results_homes.json"
 df.to_csv(save_path, index=False)
 
 print(f"\n Batch inference completed!")
